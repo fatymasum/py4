@@ -1,41 +1,23 @@
-class Pul:
-    def __init__(self, reng):
-        self.reng = reng
+class Kitab:
+    def __init__(self, ad, yazar, janr):
+        self.ad = ad
+        self.yazar = yazar
+        self.janr = janr
+ 
 
-    def hərəkət_et(self):
-        raise NotImplementedError("Alt siniflərdə bu metod tətbiq olunmalidir.")
+    def adi_deyisdir(self, yeni_ad):
+        self.ad = yeni_ad
+        print("Kitabın adı ugurlu deyisdirildi.")
 
-
-class Şah(Pul):
-    def __init__(self, reng):
-        super().__init__(reng)
-
-    def hərəkət_et(self):
-        return "Şah hərəkət edir."
-
-
-class top(Pul):
-    def __init__(self, reng):
-        super().__init__(reng)
-
-    def hərəkət_et(self):
-        return "Top hərəkət edir."
+    def melumatlari_goster(self):
+        print(f"{self.ad} - {self.yazar}")
 
 
-class Fil(Pul):
-    def __init__(self, reng):
-        super().__init__(reng)
-
-    def hərəkət_et(self):
-        return "Fil hərəkət edir."
+kitab1 = Kitab("Səfillər", "Victor Hugo", "Roman")
+kitab1.melumatlari_goster()
 
 
-
-şah1 = Şah("Ağ")
-top1 = top("Qara")
-fil1 = Fil("Ağ")
+kitab1.adi_deyisdir("Notr Dam")
+kitab1.melumatlari_goster()
 
 
-print(şah1.hərəkət_et()) 
-print(top1.hərəkət_et())  
-print(fil1.hərəkət_et())  
